@@ -44,6 +44,19 @@ func (l *LinkedList) RemoveAtEnd(){
 	
 }
 
+func (l *LinkedList) RemoveAtStart() {
+	if l.root == nil || l.root.next == nil {
+		l.root = nil
+		return
+	}
+	
+	newRoot := l.root.next
+	l.root = nil
+	l.root = newRoot
+	l.length = l.length -1
+	return
+}
+
 //O(1)
 func (l *LinkedList) AppendList(lnext *LinkedList){
 	l.head.next = lnext.root

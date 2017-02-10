@@ -28,3 +28,7 @@ func (s *stack) Peek() int {
 func (s *stack) Empty() bool {
 	return s.list.Empty()
 }
+
+func (s *stack) Depth() int {
+	return s.list.Len()
+}

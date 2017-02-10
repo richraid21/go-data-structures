@@ -28,6 +28,22 @@ func TestListRemoveAtEnd(t *testing.T) {
 	}
 }
 
+func TestListRemoveAtStart(t *testing.T) {
+	line:= new(LinkedList)
+	
+	first := Node{data: 8}
+	line.Append(&first)
+	
+	second := Node{data: 2}
+	line.Append(&second)
+	
+	line.RemoveAtStart()
+	
+	if line.Peek() != &second || line.Len() != 1{
+		t.Error("Removal of Start Element Incorrect")
+	}
+}
+
 func TestListAppendList(t *testing.T) {
 	list1 := new(LinkedList)
 	list2 := new(LinkedList)
