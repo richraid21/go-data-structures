@@ -7,8 +7,8 @@ import (
 
 func main() {
     s := structures.NewStack()
-	s.Push(17)
-	s.Push(72)
-	s.Push(2)
+	s.Push(&structures.Node{Value: 17})
+	s.Push(&structures.Node{Value: 72})
+	s.Push(&structures.Node{Value: 2})
 	fmt.Println(s.Depth())
 }

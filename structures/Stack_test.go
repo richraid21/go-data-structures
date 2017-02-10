@@ -15,8 +15,8 @@ func TestStackPush(t *testing.T) {
 	t.Log("Test the push operation on an existing Stack.")
 	s := NewStack()
 	
-	s.Push(17)
-	s.Push(72)
+	s.Push(&Node{Value: 17})
+	s.Push(&Node{Value: 72})
 	
 	if s.Depth() != 2 {
 		t.Error("Stack Push 3 Elements should have depth of 3")
@@ -27,10 +27,10 @@ func TestStackPeek(t *testing.T) {
 	t.Log("Test the peek operation on an existing Stack.")
 	s := NewStack()
 	
-	s.Push(17)
-	s.Push(72)
+	s.Push(&Node{Value: 17})
+	s.Push(&Node{Value: 72})
 	
-	if s.Peek() != 72 {
+	if s.Peek().Value != 72 {
 		t.Error("Stack Peek() should return last pushed element")
 	}
 	
@@ -43,10 +43,10 @@ func TestStackPop(t *testing.T) {
 	t.Log("Test the pop operation on an existing Stack.")
 	s := NewStack()
 	
-	s.Push(17)
-	s.Push(72)
+	s.Push(&Node{Value: 17})
+	s.Push(&Node{Value: 72})
 	
-	if s.Pop() != 72 {
+	if s.Pop().Value != 72 {
 		t.Error("Stack Pop() should return last pushed element")
 	}
 	
