@@ -81,6 +81,12 @@ func (l *LinkedList) Peek() *Node{
 	return l.head
 }
 
+//Root returns the root Node
+//O(1)
+func (l *LinkedList) Root() *Node{
+	return l.root
+}
+
 //Empty returns true if the list contains no Nodes
 func (l *LinkedList) Empty() bool{
 	return l.length == 0
